@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     $users =$result->fetch_assoc();
 
-   if($users){
+   if($users && $users["acc_activation_hash"] === null){
 
    if( password_verify($_POST["password"], $users["password_hash"])){
          
@@ -68,6 +68,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     
     <?php endif; ?>
 
+    <h1>Giriş Yap</h1>
+
 <form method="post" >
             <label for="email">Email</label>
             <input type="email" id="email" name="email"
@@ -80,6 +82,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         </div>
 
         <button>Giriş Yap</button>
+
+        <p> Hesabınız yok mu? <a href="signup.html">Kayıt Ol</a></p>
         </form>
     
 </body>
