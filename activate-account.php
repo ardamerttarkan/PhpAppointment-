@@ -29,7 +29,7 @@ $sql = "UPDATE users
 
 $stmt = $mysqli->prepare($sql);
 
-$stmt->bind_param("s", $users["id"]);
+$stmt->bind_param("s", $user["id"]);
 
 $stmt->execute();
 

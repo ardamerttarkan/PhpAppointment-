@@ -41,7 +41,7 @@ $acc_activation_hash = hash("sha256", $activation_token);
         die("Bağlantı hatası: " . $mysqli->error);
  }
 
- $stmt-> bind_param("ssss", $_POST["name"], $_POST["email"], $password_hash, $aacc_activation_hash);
+ $stmt-> bind_param("ssss", $_POST["name"], $_POST["email"], $password_hash, $acc_activation_hash);
 
  if ($stmt->execute()) {
 
@@ -52,7 +52,7 @@ $acc_activation_hash = hash("sha256", $activation_token);
     $mail->Subject = "Account Activation";
     $mail->Body = <<<END
 
-    Click <a href="http://example.com/activate-account.php?token=$activation_token">here</a> 
+    Click <a href="localhost/PHP/loginandsignup/activate-account.php?token=$activation_token">here</a> 
     to activate your password.
 
     END;

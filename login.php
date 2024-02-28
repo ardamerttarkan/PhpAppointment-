@@ -57,6 +57,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    
 </head>
 <body>
 
@@ -71,6 +72,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <h1>Giriş Yap</h1>
 
 <form method="post" >
+    <div>
             <label for="email">Email</label>
             <input type="email" id="email" name="email"
             value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
